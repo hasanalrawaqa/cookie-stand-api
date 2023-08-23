@@ -13,12 +13,17 @@ class CookieStandListView(LoginRequiredMixin, ListView):
 class CookieStandDetailView(LoginRequiredMixin, DetailView):
     template_name = "CookieStands/CookieStand_detail.html"
     model = CookieStand
+    fields ="__all__"
+    context_object_name = "CookieStand"  # Use singular here
+
 
 
 class CookieStandUpdateView(LoginRequiredMixin, UpdateView):
     template_name = "CookieStands/CookieStand_update.html"
     model = CookieStand
     fields = "__all__"
+    context_object_name = "CookieStand"  # Use singular here
+
 
 
 class CookieStandCreateView(LoginRequiredMixin, CreateView):
